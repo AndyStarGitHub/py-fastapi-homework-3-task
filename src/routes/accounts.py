@@ -189,13 +189,15 @@ async def activate_user(
         result = await db.execute(select(ActivationTokenModel).where(ActivationTokenModel.user_id == user.id))
         db_activation_token = result.scalar_one_or_none()
         if not db_activation_token:
-            return None
+            # return None
+            return MessageResponseSchema(message="An error occurred during user activation.")
         await db.delete(db_activation_token)
 
         result = await db.execute(select(UserModel).where(UserModel.id == user.id))
         db_user = result.scalar_one_or_none()
         if not db_user:
-            return None
+            # return None
+            return MessageResponseSchema(message="An error occurred during user activation.")
 
         db_user.is_active = True
         await db.flush()

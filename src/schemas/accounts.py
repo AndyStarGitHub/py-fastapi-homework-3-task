@@ -41,16 +41,11 @@ class UserActivationRequestSchema(BaseModel):
     email: str
 
 
-class UserActivationResponseSchema(BaseModel):
-    pass
-
-
 class PasswordResetRequestSchema(BaseModel):
     email: str
 
 
 class PasswordResetCompleteRequestSchema(UserBase):
-    email: str
     token: str
     password: str
 
