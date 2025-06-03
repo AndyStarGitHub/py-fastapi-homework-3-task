@@ -17,7 +17,7 @@ class BaseAppSettings(BaseSettings):
 class Settings(BaseAppSettings):
     SECRET_KEY_ACCESS: str = os.getenv("SECRET_KEY_ACCESS", secrets.token_urlsafe(32))
     SECRET_KEY_REFRESH: str = os.getenv("SECRET_KEY_REFRESH", secrets.token_urlsafe(32))
-    pass
+
 #     POSTGRES_USER: str = os.getenv("POSTGRES_USER", "test_user")
 #     POSTGRES_PASSWORD: str = os.getenv("POSTGRES_PASSWORD", "test_password")
 #     POSTGRES_HOST: str = os.getenv("POSTGRES_HOST", "test_host")
