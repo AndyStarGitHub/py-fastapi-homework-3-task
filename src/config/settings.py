@@ -32,7 +32,10 @@ class Settings(BaseAppSettings):
 #     SECRET_KEY_REFRESH: str = os.getenv("SECRET_KEY_REFRESH", secrets.token_urlsafe(32))
 
 
-    JWT_SIGNING_ALGORITHM: str = os.getenv("JWT_SIGNING_ALGORITHM", "HS256")
+    JWT_SIGNING_ALGORITHM: str = os.getenv(
+        "JWT_SIGNING_ALGORITHM",
+        "HS256"
+    )
 
 
 class TestingSettings(BaseAppSettings):
